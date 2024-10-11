@@ -6,6 +6,7 @@ import sys
 class CodePathTracer(ast.NodeVisitor):
     def __init__(self):
         self.graph = graphviz.Digraph()
+        self.graph.attr(rankdir='TB', nodesep='0.5', ranksep='0.7')  # Set layout to vertical
         self.current_function = None
         self.current_class = None
         self.defined_functions = set()  # Track functions defined in the file
